@@ -49,15 +49,63 @@ O octeto que representa o dispositivo (por exemplo, em 255.255.255.xxx) não pod
 * O 255 é usado para broadcast, que envia uma mensagem a todos os dispositivos de uma rede.
 Essas regras podem variar conforme a versão do protocolo IP (IPv4 ou IPv6) e a máscara de sub-rede aplicada. O termo octeto vem do fato de que cada octeto é composto por 8 bits, o que permite 256 combinações possíveis (de 0 a 255).
 
-Caso queira visualizar essas informações no seu computador, basta digitar o comando ipconfig no CMD (Prompt de Comando) do Windows, e várias informações sobre a rede serão exibidas.
+Caso queira visualizar essas informações no seu computador, basta digitar o comando 
+
+  ```bash
+     node -v
+   ````
+   
+no **CMD (Prompt de Comando)** do Windows, e várias informações sobre a rede serão exibidas.
 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c61163cb-7664-402a-827d-3d3bc2d7f103" alt="Descrição da imagem" width="50%" />
 </p>
 
-## NODE.JS 
+## COMO INSTALAR O NODE.JS 
 
+O JavaScript roda nativamente no navegador, mas para executá-lo fora dele, precisamos de uma ferramenta que ofereça os módulos e o ambiente necessários. Utilizamos o **Node.js** para isso.
 
+## Como instalar o Node.js
 
+1. Acesse o site oficial do [Node.js](https://nodejs.org/en) e baixe a versão recomendada para o seu sistema operacional.
+2. Siga as etapas da instalação (próximo, aceitar termos, etc.).
+
+Após a instalação, você não verá um aplicativo do Node.js na área de trabalho, pois ele é um ambiente de execução, e não uma aplicação visual.
+
+## Verificando a instalação
+
+1. Abra o **Prompt de Comando (CMD)** ou o terminal.
+3. Digite o comando abaixo para verificar se a instalação foi bem-sucedida:
+   
+     ```bash
+     node -v
+
+## Testando o Node.js
+
+### Criando arquivos e rodando no Visual Studio Code
+
+Para testar o Node.js, vamos utilizar o **Visual Studio Code**. Certifique-se de que ele esteja instalado no seu computador.
+
+#### Passos:
+
+1. **Crie uma pasta** em qualquer diretório do seu sistema para organizar o projeto.
+2. **Dentro dessa pasta**, crie um arquivo com extensão `.js` (geralmente o nome é `index.js` para arquivos principais).
+3. **Abra a pasta** no **Visual Studio Code**:
+   - Clique em `File` (Arquivo) > `Open Folder` (Abrir Pasta).
+   - Selecione a pasta criada anteriormente.
+
+Agora você pode começar a escrever seu código JavaScript e testá-lo com o Node.js!
+
+### Executando o arquivo no terminal
+
+1. No **Visual Studio Code**, vá até o terminal embutido. Para abrir o terminal, use o atalho:
+   - **Windows/Linux**: `Ctrl + Shift + ~`
+   - **Mac**: `Cmd + Shift + ~`
+   
+2. No terminal, digite o seguinte comando para executar o arquivo `.js`:
+   ```bash
+   node index.js
+   
+## E AGORA?
 
