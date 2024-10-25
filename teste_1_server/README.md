@@ -47,9 +47,9 @@ ALGUNS PONTOS:
 * Para "ver" o server basta digitar no CMD:
   
   ```bash
-   netstat
+   netstat -ano
   
-Enquanto estiver ativo ele estará la (*listening*), com outras informações:
+Enquanto estiver ativo ele estará la (*listening*), com outras informações. Deve estar no começo do protocolo TCP para comunicação local.
 
 
 
