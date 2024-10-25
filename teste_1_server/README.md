@@ -53,5 +53,7 @@ ALGUNS PONTOS:
   
 Enquanto estiver ativo ele estará la (*listening*), com outras informações. Deve estar no começo do protocolo TCP para comunicação local.
 
+**[ANDAMENTO>>]()**
+
 
 
