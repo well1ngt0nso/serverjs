@@ -28,7 +28,9 @@ Agora você pode começar a escrever seu código JavaScript e testá-lo com o No
 
 Como já estava rodando JavaScript no navegador antes de começar a trabalhar no servidor, acabei criando o arquivo com a extensão `.js`, seguindo as orientações anteriores. No entanto, o código não funcionou, então segui outra abordagem. Felizmente, identifiquei o problema, e vamos iniciar a explicação a partir disso.
 
-No site do **Node.js**, há um exemplo básico de criação de um servidor. Ao tentar rodar esse código no Visual Studio Code, uma mensagem de erro apareceu, especificamente relacionada à forma de importar o módulo `createServer`. Sem perder tempo, encontrei outra maneira de resolver, que explicarei mais adiante, mas primeiro, vejamos como rodar o código diretamente do [site](https://nodejs.org/pt):
+No site do **Node.js**, há um exemplo básico de criação de um servidor. Ao tentar rodar esse código no Visual Studio Code, uma mensagem de erro apareceu, especificamente relacionada à forma de importar o módulo `createServer`. Sem perder tempo, encontrei outra maneira de resolver, que explicarei mais adiante, mas primeiro, vejamos como rodar o código diretamente do [site](https://nodejs.org/pt), COLOQUEI ALGUNS COMENTÁRIOS [AQUI](teste_1_server/index.js) (MESMO CÓDIGO):
+
+
 
 - **Simples**: Troque a extensão `.js` por `.mjs` no arquivo e cole o código lá.
 
