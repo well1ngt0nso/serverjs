@@ -1,1 +1,79 @@
+# VOLTANDO UM POUCO....
+Como comentei anteriormente, comecei utilizando a versão anterior e por isso vou começar por ela
+
+## ALGUMAS DIFERENÇAS: 
+Do código anterior as diferenças são sutis:
+
+```javascript
+const {createServer} = require('node:http');  //versão anterior
+import {createServer} from 'node:http';      //muito semelhante ao python
+```
+
+Outra altereação é na forma de como estruturar a resposta:
+
+```javascript
+//VERSÃO ANTERIOR
+res.satatsCode = 200;
+res.setHeader('Contente-Type', 'text/plain');
+res.end('Hello World');
+
+//MAIS COMPACTA
+res.writeHead(200, {'Contain-Type': 'text/plain'});
+```
+## DEIXANDO DE RODAR EM 127.0.0.1
+O servidor estava rodadndo em *localhost*, só era possível acesar fora da rede, agora vamos liberar isso para quem estiver conectado no wifi em si:
+1. Mudar o IP!
+Apenas com essa alteração as solicitações já chegaraão ao nosso server, mas qual IP colocar? Resp: o do dispositivo onde o server roda, no meu caso o PC
+1.digite no **CMD**
+```bash
+ipconfig
+```
+Deve aparecer vários blocos, em suma as conexão dos adaptadores de rede  Wifi e ethernet (via cabo), caso queira permitir o acesso por ambas basta utilizar o IP `0.0.0.0`.  No caso de servidores, esse IP libera o acesso das interfaces....  
+
+No meu caso é via cabo, então vou atrás do IP da conexão, nesse caso ele vai estar no bloco etherhet IPv4/IPv6, com isso basta rodar novamente o servidor e acessa-lo na mesma máquina ou fora (necessário estarem na mesma rede), fiz apenas algumas pequenas modificações:
+
+```javascript
+const { createServer } = require('node:http'); //Inporta o módulo
+
+// 127.0.0.1   CONEXÃO NA PRÓPRIA MÁQUINA (localhost loopback local)
+// 0.0.0.0   O MESMO QUE O IP DA MÁQUINA (CONEXÃO EM TODAS A INTERFACES DE REDE)
+const hostname = '192.168.2.5';  //Seu IP (cmd >> ipconfig (endereço IPv4 onde está o server))
+const port = 3000; //Porta de conexão
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;  //Apenas uma númeração que identifica casos (tem várias) Ex. ERR0 404 (PÁGINA NÃO ENCONTRADA)
+  res.setHeader('Content-Type', 'text/plain'); //cabeçalho tipo de resposta (tudo junto na nova versão writeHead(22, {'Content-Type':'text/plain'}))
+  res.end('Hello Worlddddd'); //Resposta
+});
+
+server.listen(port, hostname, () => {   //Mantém o servidor ouvindo na porta 3000
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+## ENDPOINT's
+Quando você digita no seu navegador `seu_ip:port` automaticamente a resposta é recebida, isso ocorre porque não estamos configurando de fato os chamados **endpoints**, vamos entender melhor.
+
+Quando você criou o servidor, uma função **callback** foi passada como argumento:
+
+```javascript
+(req, res) => {
+...
+}
+```
+E logo após isso coloca o servidor para ouvir na porta 3000, o servidor estará verificando se tem requisição e quando tem, ele chama a função **callback**.
+Por isso que independente do que seja digitado, o server vai retonar o mesmo texto. 
+
+REQUISIÇÃO >> SERVER CHAMA CALLBACK >> CALLBACK NÃO TRATA NADA E JÁ RETORNA ALGO
+
+### TRATANDO OS CAMINHOS
+Quando estrututo o server posso estabelecer diferentes camihhos, cada um levando para uma parte da minha interface, por exemplo:
+No momento que altero esse `README.md` a url é `https://github.com/well1ngt0nso/serverjs/edit/main/teste_2_server/README.md`
+* `https://` : Protocolo
+* `github.com` : Endereço da página no servidor
+* `well1ngt0nso/serverjs/edit/main/teste_2_server/README.md` : Endpoints (as rotas, os caminhos) veri valida
+  
+  "O usuário `well1ngt0nso` está acessando  `serverjs` que pode acessar `edit` .... e chega em `README.md`. Server: quando a requisição fizer esse caminho libere uma página de edição de...."
+
+Nesse caso cada /expressão/ é um endpoint.
 
