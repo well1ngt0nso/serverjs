@@ -83,5 +83,5 @@ Após a instalação, você não verá um aplicativo do Node.js na área de trab
    
 ## E AGORA?
 Agora vou começar a dividir por pastas e a medida que ache necessário, vou criando tópicos, aqui posso ir deixando algumas coisas que achei legal...
-1. [CRIANDO_SERVIDOR]()
+1. [CRIANDO_SERVIDOR](https://github.com/well1ngt0nso/serverjs/blob/main/teste_1_server/README.md#testando-o-nodejs)
 2. 
