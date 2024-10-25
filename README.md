@@ -80,32 +80,6 @@ Após a instalação, você não verá um aplicativo do Node.js na área de trab
    
      ```bash
      node -v
-
-## Testando o Node.js
-
-### Criando arquivos e rodando no Visual Studio Code
-
-Para testar o Node.js, vamos utilizar o **Visual Studio Code**. Certifique-se de que ele esteja instalado no seu computador.
-
-#### Passos:
-
-1. **Crie uma pasta** em qualquer diretório do seu sistema para organizar o projeto.
-2. **Dentro dessa pasta**, crie um arquivo com extensão `.js` (geralmente o nome é `index.js` para arquivos principais).
-3. **Abra a pasta** no **Visual Studio Code**:
-   - Clique em `File` (Arquivo) > `Open Folder` (Abrir Pasta).
-   - Selecione a pasta criada anteriormente.
-
-Agora você pode começar a escrever seu código JavaScript e testá-lo com o Node.js!
-
-### Executando o arquivo no terminal
-
-1. No **Visual Studio Code**, vá até o terminal embutido. Para abrir o terminal, use o atalho:
-   - **Windows/Linux**: `Ctrl + Shift + ~`
-   - **Mac**: `Cmd + Shift + ~`
-   
-2. No terminal, digite o seguinte comando para executar o arquivo `.js`:
-   ```bash
-   node index.js
    
 ## E AGORA?
 Agora vou começar a dividir por pastas e a medida que ache necessário, vou criando tópicos, aqui posso ir deixando algumas coisas que achei legal...
