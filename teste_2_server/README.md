@@ -13,7 +13,7 @@ Outra altereação é na forma de como estruturar a resposta:
 
 ```javascript
 //VERSÃO ANTERIOR
-res.satatsCode = 200;
+res.statusCode = 200;
 res.setHeader('Contente-Type', 'text/plain');
 res.end('Hello World');
 
@@ -47,7 +47,7 @@ const server = createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {   //Mantém o servidor ouvindo na porta 3000
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server Rodando em http://${hostname}:${port}/`);
 });
 ```
 
@@ -77,3 +77,36 @@ No momento que altero esse `README.md` a url é `https://github.com/well1ngt0nso
 
 Nesse caso cada /expressão/ é um endpoint.
 
+### CRIANDO ENDPOINTS 
+Primeiro precisamos entender que tanto `req` como `res` passadas como argumento na função callback ceberão objetos, portanto serão objetos. 
+Como objetos uma quantidade de caracteríticas são possibilitadas, no caso `req` um atíbuto pode ser acessado `.url`
+
+```javascript
+const {createServer} = require('node:http');
+
+const server = createServer((req, res) => {
+
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+console.log('url: ' + req.url);
+res.end();
+
+});
+
+server.listen(3000, '192.168.1.4', () =>{
+  
+    console.log('conectado');
+
+});
+
+```
+
+Rodando esse código será possível observar os endpoints que o navegador requisita, inclusive mesmo que você digite `seu_ip:port` ou `seu_ip:port/`, no fim aparecerá `seu_ip:port` e em ambos os casos será enviado `/`. Para testar os outros basta adicionar csminhos, por exemplo: `seu_ip:port/usuario/senha/email`; `seu_ip:port/pasta`;
+
+Pode ser que chegue mais de uma requisição, no meu caso aparece algo assim:
+```bash
+url: /pasta
+url: /favicon.ico
+```
+
+Essa segunda url é a requisição do próprio navegador, nesse caso requisita o ícone da página (pode ser difernte no seu caso)...
