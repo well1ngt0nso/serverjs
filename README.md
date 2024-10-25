@@ -108,4 +108,6 @@ Agora você pode começar a escrever seu código JavaScript e testá-lo com o No
    node index.js
    
 ## E AGORA?
-
+Agora vou começar a dividir por pastas e a medida que ache necessário, vou criando tópicos, aqui posso ir deixando algumas coisas que achei legal...
+1. [CRIANDO_SERVIDOR]()
+2. 
