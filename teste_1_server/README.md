@@ -1,4 +1,4 @@
-# Testando o Node.js
+um# Testando o Node.js
 
 ## Criando arquivos e rodando no Visual Studio Code
 
@@ -45,13 +45,13 @@ No site do **Node.js**, há um exemplo básico de criação de um servidor. Ao t
 5. Quando tudo estiver funcionando corretamente, ao abrir o navegador, você verá uma mensagem "Hello World" (ou a resposta que você configurou no servidor).
 
 ALGUNS PONTOS:
-* Para derrubar o server baasta `ctrl + c` no terminal no VS
-* Para "ver" o server basta digitar no CMD:
+* Para derrubar o server basta `ctrl + c` no terminal no VS
+* Para "ver" a conexão do server basta digitar no CMD:
   
   ```bash
    netstat -ano
   
-Enquanto estiver ativo ele estará la (*listening*), com outras informações. Deve estar no começo do protocolo TCP para comunicação local.
+Enquanto estiver ativo ele estará lá (*listening*). Deve estar no começo do protocolo TCP para comunicação local.
 
 **[ANDAMENTO>>]()**
 
