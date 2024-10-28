@@ -115,7 +115,7 @@ url: /favicon.ico
 Essa segunda url é a requisição do próprio navegador, nesse caso requisita o ícone da página (pode ser difernte no seu caso)...
 
 ### TRATANDO REQUISIÇÕES
-Uma forma simples de fazer isso é usando `if(_){};` de forma simples uma vez que req.url retorna uma string:
+Uma forma simples de fazer isso é usando `if(_){};` uma vez que req.url retorna uma string:
 
 ```javascript
 const { createServer } = require('node:http');
