@@ -25,7 +25,7 @@ O servidor estava rodadndo em *localhost*, só era possível acesar fora da rede
 1. Mudar o IP!
 Apenas com essa alteração as solicitações já chegaraão ao nosso server, mas qual IP colocar? Resp: o do dispositivo onde o server roda, no meu caso o PC
 
-1.digite no **CMD**
+1.Digite no **CMD**
 
 ```bash
 ipconfig
