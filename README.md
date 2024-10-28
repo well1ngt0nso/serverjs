@@ -86,4 +86,4 @@ Agora vou começar a dividir por pastas e a medida que ache necessário, vou cri
 1. [CRIANDO_SERVIDOR](https://github.com/well1ngt0nso/serverjs/blob/main/teste_1_server/README.md#testando-o-nodejs)
 
 ## DICAS🎯
-1. Desconectar o server após atualizações, em alguns casos limpar o cache do navegador ou rodar na guia anônima 
+1. Desconectar o server após atualizações, em alguns casos limpar o cache do navegador ou rodar na guia anônima devido que pode ocorrer de algums configurações anteriores ficarem salvas ou armazenadas, seria um pouco ruim ver o projeto não funcionar quando temos muita certeza que tudo está ok e o problema ser um dos citado haha (aconteu comigo)
