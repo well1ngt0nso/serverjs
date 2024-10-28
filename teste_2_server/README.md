@@ -21,10 +21,12 @@ res.end('Hello World');
 res.writeHead(200, {'Contain-Type': 'text/plain'});
 ```
 ## DEIXANDO DE RODAR EM 127.0.0.1
-O servidor estava rodadndo em *localhost*, só era possível acesar fora da rede, agora vamos liberar isso para quem estiver conectado no wifi em si:
+O servidor estava rodadndo em *localhost*, só era possível acesar fora da rede, agora vamos liberar isso para quem estiver conectado no wi-fi em si:
 1. Mudar o IP!
 Apenas com essa alteração as solicitações já chegaraão ao nosso server, mas qual IP colocar? Resp: o do dispositivo onde o server roda, no meu caso o PC
+
 1.digite no **CMD**
+
 ```bash
 ipconfig
 ```
@@ -50,6 +52,7 @@ server.listen(port, hostname, () => {   //Mantém o servidor ouvindo na porta 30
   console.log(`Server Rodando em http://${hostname}:${port}/`);
 });
 ```
+Para testar é só usar outro dispositivo e acessar o mesmo endereço, mas com o novo IP, deve aparecer a mesma mensagem.
 
 ## ENDPOINT's
 Quando você digita no seu navegador `seu_ip:port` automaticamente a resposta é recebida, isso ocorre porque não estamos configurando de fato os chamados **endpoints**, vamos entender melhor.
