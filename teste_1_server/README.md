@@ -1,4 +1,4 @@
-um# Testando o Node.js
+# Testando o Node.js
 
 ## Criando arquivos e rodando no Visual Studio Code
 
