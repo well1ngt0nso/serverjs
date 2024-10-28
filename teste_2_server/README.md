@@ -52,7 +52,7 @@ server.listen(port, hostname, () => {   //Mantém o servidor ouvindo na porta 30
   console.log(`Server Rodando em http://${hostname}:${port}/`);
 });
 ```
-Para testar é só usar outro dispositivo e acessar o mesmo endereço, mas com o novo IP, deve aparecer a mesma mensagem.
+Para testar basta apenas usar outro dispositivo e acessar o mesmo endereço, mas com o novo IP, deve aparecer a mesma mensagem quando o IP era `127.0.0.1`. 
 
 ## ENDPOINT's
 Quando você digita no seu navegador `seu_ip:port` automaticamente a resposta é recebida, isso ocorre porque não estamos configurando de fato os chamados **endpoints**, vamos entender melhor.
@@ -81,8 +81,8 @@ No momento que altero esse `README.md` a url é `https://github.com/well1ngt0nso
 Nesse caso cada /expressão/ é um endpoint.
 
 ### CRIANDO ENDPOINTS 
-Primeiro precisamos entender que tanto `req` como `res` passadas como argumento na função callback ceberão objetos, portanto serão objetos. 
-Como objetos uma quantidade de caracteríticas são possibilitadas, no caso `req` um atíbuto pode ser acessado `.url`
+Primeiro precisamos entender que tanto `req` como `res` passadas como argumento na função callback recebem objetos, portanto serão objetos. 
+Como objetos, uma quantidade de caracteríticas são possibilitadas, no caso `req` um atíbuto pode ser acessado `.url`
 
 ```javascript
 const {createServer} = require('node:http');
@@ -104,7 +104,7 @@ server.listen(3000, '192.168.2.5', () =>{
 
 ```
 
-Rodando esse código será possível observar os endpoints que o navegador requisita, inclusive mesmo que você digite `seu_ip:port` ou `seu_ip:port/`, no fim aparecerá `seu_ip:port` e em ambos os casos será enviado `/`. Para testar os outros basta adicionar csminhos, por exemplo: `seu_ip:port/usuario/senha/email`; `seu_ip:port/pasta`;
+Rodando esse código será possível observar os endpoints que o navegador requisita, inclusive mesmo que você digite `seu_ip:port` ou `seu_ip:port/`, no fim aparecerá `seu_ip:port` e em ambos os casos será enviado `/`. Para testar os outros basta adicionar caminhos, por exemplo: `seu_ip:port/usuario/senha/email`; `seu_ip:port/pasta`;
 
 Pode ser que chegue mais de uma requisição, no meu caso aparece algo assim:
 ```bash
@@ -115,7 +115,7 @@ url: /favicon.ico
 Essa segunda url é a requisição do próprio navegador, nesse caso requisita o ícone da página (pode ser difernte no seu caso)...
 
 ### TRATANDO REQUISIÇÕES
-Uma forma simples de fazer isso é usando `if(_){};`:
+Uma forma simples de fazer isso é usando `if(_){};` de forma simples uma vez que req.url retorna uma string:
 
 ```javascript
 const { createServer } = require('node:http');
@@ -152,4 +152,9 @@ server.listen(port, hostname, () => {
 });
 
 ```
+
+## Conclusão 
+
+Já sabemos como manipular os caminhos e como estabelecer comunicação em toda a rede, agora vamos ver outras coisas interessantes...
+
 [LINK DO CÓDIGO](server/index.js)  [ANDAMENTO>>]()
