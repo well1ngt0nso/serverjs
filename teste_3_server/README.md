@@ -125,19 +125,18 @@ Possívelmente aparece no terminal inclusive o `else`  funcionou para `/favcon.i
 Isso acontece porque nosso html não estabelece nenhuma comunicação com o servidor, é apenas una página estática, para estabelecer uma comunicação vamos estabelecer umas comunicação pelo lado do cliente e também com javascript, para isso vamos asicionar o seguinte bloco de código no html logo abaixo a tag`<title>`: 
 
 ```html
-<html>
-        <script>
-            function requist(endpoint){
-            fetch('http://127.0.0.1:3000' + endpoint);
-        }
-        </script>
+<script>
+    function requist(endpoint){
+    fetch('http://127.0.0.1:3000' + endpoint);
+}
+</script>
 ```
 
 Isso é um bloco de javascript dentro do html, não é a melhor abordagem, mais para frente vamos separar em arquivos...
 basicamente a gente cria uma função que recebe como parâmetro o endpoint que queremos acessar, e dentro usamos uma função do javascript que faz requisições `fech(url);`.
 
 
-> ⚠️ **OBS:** Dependendo de como você está fazendo, pode ocorrer erros sutís e que podem ser desafiador de início, recomendo só passar para próxima etapa qunado a etapa atual funcionar e utilize o código que disponibilizo para comparar caso algum erro ocorra e recomendo olhar o [Tteste_2_server](https://github.com/well1ngt0nso/serverjs/tree/main/teste_2_server#voltando-um-pouco), lá falo sobre os principais problemas e como resolver!
+> ⚠️ **OBS:** Dependendo de como você está fazendo, pode ocorrer erros sutís e que podem ser desafiador de início, recomendo só passar para próxima etapa qunado a etapa atual funcionar e utilize o código que disponibilizo para comparar caso algum erro ocorra e recomendo olhar o [teste_2_server](https://github.com/well1ngt0nso/serverjs/tree/main/teste_2_server#voltando-um-pouco), lá falo sobre os principais problemas e como resolver!
 
 Agora temos que chamar a funçao que criamos ao clicar no botão, por sorte existe um atributo de evento em html que execuata algo ao clicar no botão: `onclick = ""`. Passamos nossa função e o endpoint que queremos acessar: 
 
