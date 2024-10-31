@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'UTF8'>
+        <title>Teste Requisição</title>
+        <script>
+            function requist(endpoint){
+            fetch ('http://127.0.0.1:3000' + endpoint)
+        }
+        </script>
+    </head>
+    <body>
+        <h1> Teste de Requisição </h1>  
+        <button onclick ="requist('/pasta')"> /pasta</button>
+        <button onclick ="requist('/edit')"> /edit </button>
+        <button onclick ="requist ('/favcon.ico')"> / favicon.ico </button>
+    </body>
+</html>
