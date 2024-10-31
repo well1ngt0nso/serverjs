@@ -59,7 +59,7 @@ server.listen(port, localhost, ()=>{
 
 });
 ```
-Para testar basta acessar os *endpoints`* no navegador e a resposta será exibida, perceba que o server está rodando localmente, para alterar é só colocar o seu IP
+Para testar basta acessar os *endpoints* no navegador e a resposta será exibida, perceba que o server está rodando localmente, para alterar é só colocar o seu IP do dispositivo. Perceba que `/favcon.ico` não exibe o que pedimos, deveria já que cairia no else, mas não se preocupe, o código não está errado, lá no final eu comento sobre....
 
 
 Agora vamos para o html:
@@ -80,9 +80,9 @@ Agora vamos para o html:
     </body>
 </html>
 ```
-Para testar basta abrir o arquivo no navegador
 
-Você vai perceber que ao cliar nos botões nada acontece, vamos mudar o `index.js`:
+Para testar basta abrir o arquivo no navegador
+Você vai perceber que ao cliar nos botões nada acontece, vamos mudar o `index.js` para plotar a url requisitada por meio do console:
 
 ```javascript
 //index.js
@@ -96,20 +96,20 @@ server = createServer((req,  res) => {
         res.statusCode = 200;
         res.setHeader('Contain-Type', 'text/plain');
         res.end(req.url);
-        console.log(req.url)
+        console.log(req.url);
 
     } else if(req.url === "/edit"){
 
         res.statusCode = 200;
         res.setHeader('Contain-Type', 'text/plain');
         res.end(req.url);
-        console.log(req.url)
+        console.log(req.url);
 
     }else{
-        res.statusCode = 202;
+        res.statusCode = 404;
         res.setHeader('Contain-Type', 'text/plain');
         res.end(`Não encontrado`);
-        console.log(req.url)
+        console.log(req.url);
 
     }
 })
@@ -120,7 +120,7 @@ server.listen(port, localhost, ()=>{
 });
 ```
 Agora estamos printando o endpoint quando chega algo, tente requisitar algo pelo navegador `seu_ip:porta/endpoint`
-Possívelmente aparece no terminal, agora tente pelos botões e verá que nada acontece! Pelo navegador a requisição chega e pelos botões não! 
+Possívelmente aparece no terminal inclusive o `else`  funcionou para `/favcon.ico` só ainda não mudou no navegador (vamos ver isso), agora tente pelos botões e verá que nada acontece! Pelo navegador a requisição chega e pelos botões não! 
 
 Isso acontece porque nosso html não estabelece nenhuma comunicação com o servidor, é apenas una página estática, para estabelecer uma comunicação vamos estabelecer umas comunicação pelo lado do cliente e também com javascript, para isso vamos asicionar o seguinte bloco de código no html logo abaixo a tag`<title>`: 
 
@@ -162,6 +162,9 @@ html completo:
     </body>
 </html>
 ```
+
+> ✅ INTERESSANTE: No código do servidor apenas tratamos dois casos em suma: `/pasta` e `/edit`, as outras requisições vão para o `else`, você deve ter visto que ambas tem retorno no navegador referente ao que colocamos na resposta, mas qualquer coisa diferente disso não é mostrada, como é o caso ao apertar o botão `/favcon.ico`, o conteúdo do `else` pode parecer semelhante as demais condições, mas temos uma mudança; `res.statusCode = 404;`. Isso basicamente dá uma ideia para o navegador sobre o que aconteceu, esse código siginifica *not found*, "não existe", famoso erro 404 ao tentar acessar uma site que já não existe ou uma funcionalidade do server... O interessante é que você pode ver o erro no navegador, vá em inspecionar página e em console, aperte os botões e veja o que acontece... Basicamente quuando esse erro ocorre o navegador descarta as alterações, no caso não exibe o que enviamos.
+
 
 Até aqui apenas requisitamos, mas e a resposta da requisição?
 Vemos na próxima aula, let's go!!!
