@@ -18,7 +18,7 @@ server = createServer((req,  res) => {
         console.log(req.url)
 
     }else{
-        res.statusCode = 202;
+        res.statusCode = 404;
         res.setHeader('Contain-Type', 'text/plain');
         res.end(`Não encontrado`);
         console.log(req.url)
