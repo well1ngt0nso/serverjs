@@ -84,6 +84,8 @@ Após a instalação, você não verá um aplicativo do Node.js na área de trab
 ## E AGORA?
 Agora vou começar a dividir por pastas e a medida que ache necessário, vou criando tópicos, aqui posso ir deixando algumas coisas que achei legal...
 1. [CRIANDO_SERVIDOR](https://github.com/well1ngt0nso/serverjs/blob/main/teste_1_server/README.md#testando-o-nodejs)
+2. [ENTENDENDO AS REQUISIÇÕES](https://github.com/well1ngt0nso/serverjs/tree/main/teste_2_server#voltando-um-pouco)
+3. [REQUISIÇÕES A PATIR DE UMA PÁGINA HTML]()
 
 ## DICAS🎯
 1. Desconectar o server após atualizações, em alguns casos limpar o cache do navegador ou rodar na guia anônima devido que pode ocorrer de algums configurações anteriores ficarem salvas ou armazenadas, seria um pouco ruim ver o projeto não funcionar quando temos muita certeza que tudo está ok e o problema ser um dos citado haha (aconteu comigo)
