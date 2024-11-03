@@ -36,3 +36,4 @@ fetch('URL_DA_SUA_API')
 - **`.then(data => { ... })`**: Processa os dados convertidos. Aqui, podemos exibir os dados na página HTML ou manipulá-los conforme necessário.
 - **`.catch(error => { ... })`**: Captura e lida com erros que possam ocorrer durante a requisição ou processamento dos dados.
 
+[ANDAMENTO>>]()
