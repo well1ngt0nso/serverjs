@@ -185,8 +185,27 @@ Você deve ter acabado de ver que recebe, ou seja, `index.html` ok, `server.js` 
 </p>
 
 Conclusões:
-1. 4 tipos de mensagem
-2. Cada uma das 3 requisições retorna duas mensagens de erro iguais: (1) verde e (3) roxo, as duas primeiras são iguais e a última requisição parece igual as outras, mas não é, tem uma diferença em (4), ERROR 404
-3. Os dois primeiros 
+1. Temos 4 tipos de mensagem
+2. Cada uma das 3 requisições retorna duas mensagens de erro iguais: (1) verde e (3) roxo, as duas primeiras são iguais `/pasta`  e `/edit`, a última requisição parece igual as outras, mas não é, tem uma diferença em (4), `ERR_FAILED 404 (Not Found)`, definimos 200 para requisição ok e 404 nos demais casos, como é o caso do `/favcon.ico`.
+
+O que podemos fazer é analisar a primeira mensagem de erro e já adianto que a solução dessa resolve as outras, você pode perquisar mais a fundo, mas adianto que esse erro é devido algo chamado CORS:
+
+A primeira mensagem de erro recebida está relacionada ao **CORS**. Esse erro acontece porque o navegador aplica uma política de segurança chamada Cross-Origin Resource Sharing (CORS), que impede requisições de origens diferentes, a menos que o servidor permita explicitamente. Lembra que falei sobre a página carregar mesmo com o servidor desligado? Como a aplicação cliente está carregando localmente, fora do servidor, o navegador interpreta essa requisição como sendo de uma origem cruzada e bloqueia a resposta por motivos de segurança, causando erros de CORS. Esse bloqueio impede o cliente de receber dados do servidor e encadeia erros de requisição e `fetch`
+
+### Solução para o Erro de CORS
+
+Para corrigir esse problema, é necessário configurar o servidor para permitir requisições de origens específicas. Isso é feito adicionando cabeçalhos CORS na resposta do servidor, como:
+
+```javascript
+
+// Configuração básica de CORS no Node.js
+res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens (apenas para testes locais)
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Permite métodos específicos
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Permite cabeçalhos específicos
+
+```
+Isso antes de qualquer resposta, você verá que apenas o botão do `/favcon.ico` não exibie resposta na tela, veremos o porquê na próxima aula...
+Código completo na pasta!
+
 
 [<< VOLTANDO](https://github.com/well1ngt0nso/serverjs/blob/main/teste_3_server/README.md#requisitando-valores)  [ANDAMENTO>>]()
