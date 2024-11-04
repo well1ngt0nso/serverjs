@@ -59,7 +59,7 @@ server.listen(port, localhost, ()=>{
 
 });
 ```
-Para testar basta acessar os *endpoints* no navegador e a resposta será exibida, perceba que o server está rodando localmente, para alterar é só colocar o seu IP do dispositivo. Perceba que `/favcon.ico` não exibe o que pedimos, deveria já que cairia no else, mas não se preocupe, o código não está errado, lá no final eu comento sobre....
+Para testar basta acessar os *endpoints* no navegador e a resposta será exibida, perceba que o server está rodando localmente, para alterar é só colocar o seu IP do dispositivo.
 
 
 Agora vamos para o html:
@@ -120,7 +120,7 @@ server.listen(port, localhost, ()=>{
 });
 ```
 Agora estamos printando o endpoint quando chega algo, tente requisitar algo pelo navegador `seu_ip:porta/endpoint`
-Possívelmente aparece no terminal inclusive o `else`  funcionou para `/favcon.ico` só ainda não mudou no navegador (vamos ver isso), agora tente pelos botões e verá que nada acontece! Pelo navegador a requisição chega e pelos botões não! 
+Possívelmente aparece no terminal, agora tente pelos botões e verá que nada acontece! Pelo navegador a requisição chega e pelos botões não! 
 
 Isso acontece porque nosso html não estabelece nenhuma comunicação com o servidor, é apenas una página estática, para estabelecer uma comunicação vamos estabelecer umas comunicação pelo lado do cliente e também com javascript, para isso vamos asicionar o seguinte bloco de código no html logo abaixo a tag`<title>`: 
 
@@ -138,7 +138,7 @@ basicamente a gente cria uma função que recebe como parâmetro o endpoint que 
 
 > ⚠️ **OBS:** Dependendo de como você está fazendo, pode ocorrer erros sutís e que podem ser desafiador de início, recomendo só passar para próxima etapa qunado a etapa atual funcionar e utilize o código que disponibilizo para comparar caso algum erro ocorra e recomendo olhar o [teste_2_server](https://github.com/well1ngt0nso/serverjs/tree/main/teste_2_server#voltando-um-pouco), lá falo sobre os principais problemas e como resolver!
 
-Agora temos que chamar a funçao que criamos ao clicar no botão, por sorte existe um atributo de evento em html que execuata algo ao clicar no botão: `onclick = ""`. Passamos nossa função e o endpoint que queremos acessar: 
+Agora temos que chamar a função que criamos ao clicar no botão, por sorte existe um atributo de evento em html que execuata algo ao clicar no botão: `onclick = ""`. Passamos nossa função e o endpoint que queremos acessar: 
 
 html completo: 
 ```html
@@ -168,7 +168,7 @@ html completo:
 
 
 Até aqui apenas requisitamos, mas e a resposta da requisição?
-Vemos na próxima aula, let's go!!!
+Veremos nas próximas aula, let's go!!!
 
 [ANDAMENTO>>]()
 
