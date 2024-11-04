@@ -57,7 +57,7 @@ O html semelhante ao do exemplo anterior:
          <script>
         // Função para fazer requisição
         function requist(endpoint) {
-            fetch('http://127.0.0.1:3000' + endpoint)  // Endpoint ABSOLUTO relativo seria o próprio "endpoint"
+            fetch('http://127.0.0.1:3000' + endpoint)  // Endpoint relativo
                 .then(response => {
                     // Verifica se a resposta foi bem-sucedida
                     if (!response.ok) {
@@ -68,7 +68,7 @@ O html semelhante ao do exemplo anterior:
                 .then(data => {
                     // Atualiza o output com a nova respost
                     console.log('aqui');
-                    document.getElementById('output').innerHTML = data; // Substitui o conteúdo
+                    document.getElementById('resposta').innerHTML = data; // Substitui o conteúdo
                 })
                 .catch(error => console.error('Erro:', error));
               }
@@ -78,6 +78,7 @@ O html semelhante ao do exemplo anterior:
     </head>
     <body>
         <h1> Teste de Requisição </h1>  
+        <p id="resposta"> Aguardando Resposta...</p>
         <button onclick ="requist('/pasta')"> /pasta</button>
         <button onclick ="requist('/edit')"> /edit </button>
         <button onclick ="requist ('/favcon.ico')"> / favicon.ico </button>
@@ -86,67 +87,8 @@ O html semelhante ao do exemplo anterior:
 ```
 
 Jacascript do servidor:
+
 ```javascript
-
-/* const { createServer } = require('node:http');
-const { readFile } = require('node:fs');
-const path = require('node:path');
-
-const hostname = '192.168.1.4';  
-const port = 3000;
-
-// Função para servir arquivos
-function serveFile(filePath, res, contentType = 'text/html') { //recebe o caminho correto, o objeto da resposta e um argumento que até podemos omitir 
-    readFile(filePath, (err, data) => {  
-        if (err) {
-            res.statusCode = 500;
-            res.setHeader('Content-Type', 'text/plain');
-            res.end('Erro ao carregar o arquivo.');
-            console.error(err);
-        } else {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', contentType);
-            res.end(data);
-        }
-    });
-}
-
-const server = createServer((req, res) => {
-    console.log(req.url); // Loga a URL requisitada
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Permite métodos
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Permite cabeçalhos
-
-
-    if (req.url === "/") {
-        // Serve o index.html na raiz
-        serveFile(path.join(__dirname, 'index.html'), res); //__dirname (caminho onde o arqui server.js está) Esse path.join é semelhante ao python (ele vê qual sistema e deixa no formato certo)
-    } 
-    else if (req.url === "/pasta") {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('Estamos na pasta\n');
-    } 
-    else if (req.url === "/pasta/edit") {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('Estamos na edição da pasta\n');
-    } else {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/plain');
-        res.end(`A rota nao é válida.\n`);
-    }
-});
-
-// Inicia o servidor
-server.listen(port, hostname, () => {
-    console.log('Servidor rodando em http://' + hostname + ':' + port);
-});
-
-
-//CRIA JASON
-//npm init -y    */
-
 const { createServer } = require('node:http');
 const port = 3000;
 const localhost = '127.0.0.1';
@@ -233,8 +175,18 @@ Supondo que voçê fez tudo igual aos algoritmos que forneci, deve está receben
 
 Você deve ter acabado de ver que recebe, ou seja, `index.html` ok, `server.js` também, só ainda não temos essa resposta visual no navegador, não como queriamos, estamos recebendo erros, pode ser problema ao manipular a resposta, seja na interpretaação ou no envio, vamos abordar as duas:
 
-- **RESPOSTA NO SERVER** : Tudo ok, você já testou isso ao fazer a requisição direta da barra do navegador e obter resposta;
+- **RESPOSTA NO SERVER** : Tudo ok, você já testou isso ao fazer a requisição direta da barra do navegador e obter a resposta;
+- **NO index.html**: Tudo ok, checamos o status da resposta `response.ok` e retornamos ela no formato de texto de acordo com o que configuramos no server, após isso pegamos o elemento de bloco de texto pelo id e trocamos o seu conteúdo pela resposta `document.getElementById('resposta').innerText = data;`, tudo ok
+- **NO NAVEGADOR**: Vamos analisar as mensagens de erro:
 
+  
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/19baeb60-6031-442a-bd00-5d9a42a60c0b" width="80%" />
+</p>
 
+Conclusões:
+1. 4 tipos de mensagem
+2. Cada uma das 3 requisições retorna duas mensagens de erro iguais: (1) verde e (3) roxo, as duas primeiras são iguais e a última requisição parece igual as outras, mas não é, tem uma diferença em (4), ERROR 404
+3. Os dois primeiros 
 
 [<< VOLTANDO](https://github.com/well1ngt0nso/serverjs/blob/main/teste_3_server/README.md#requisitando-valores)  [ANDAMENTO>>]()
