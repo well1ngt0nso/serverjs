@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'UTF8'>
+        <title>Teste Requisição</title>
+         <script>
+        // Função para fazer requisição
+        function requist(endpoint) {
+            fetch('http://127.0.0.1:3000' + endpoint)  // Endpoint relativo
+                .then(response => {
+                    // Verifica se a resposta foi bem-sucedida
+                    if (!response.ok) {
+                        throw new Error('Erro na requisição: ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Atualiza o output com a nova respost
+                    console.log('aqui');
+                    document.getElementById('resposta').innerHTML = data; // Substitui o conteúdo
+                })
+                .catch(error => console.error('Erro:', error));
+              }
+         </script>
 
+    
+    </head>
+    <body>
+        <h1> Teste de Requisição </h1>  
+        <p id="resposta"> Aguardando Resposta...</p>
+        <button onclick ="requist('/pasta')"> /pasta</button>
+        <button onclick ="requist('/edit')"> /edit </button>
+        <button onclick ="requist ('/favcon.ico')"> / favicon.ico </button>
+    </body>
+</html>
