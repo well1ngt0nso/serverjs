@@ -2,6 +2,8 @@
 
 Este repositório destina-se a demonstrar como estabelecer comunicação entre dispositivos em uma rede, seja via Wi-Fi ou Ethernet, utilizando uma API ("servidor") desenvolvida em Node.js (JavaScript). O foco é em uma comunicação local que, após a conclusão deste projeto, poderá ser facilmente portável para a Web. Serão abordados tópicos como: como funciona a comunicação, como visualizar dados, como enviar dados e como acessá-los. O objetivo inicial é explorar a manipulação e visualização desses dados.
 
+[>>> AULAS <<<](https://github.com/well1ngt0nso/serverjs/edit/main/README.md#e-agora)
+
 # BREVE INTRODUÇÃO
 
 Utilizamos computadores, telefones e tablets, e, como por mágica, todos esses dispositivos conseguem se comunicar, seja dentro de uma rede ou a partir de redes diferentes. Aplicativos de mensagens, videoconferências e muitos outros serviços dependem do que chamamos de internet. Quando abrimos um aplicativo de vídeo, uma quantidade limitada de dados é exposta, mas, ao realizarmos uma pesquisa, uma quantidade muito maior aparece. Como isso é possível? Esses dados não caberiam em um telefone, por exemplo. Quando a internet cai, o acesso é interrompido; em alguns casos, o vídeo continua sendo reproduzido e logo para. E quando falamos sobre a enorme quantidade de dados presentes no Google? Esses dados são imensos. Já pensou em como uma mensagem chega ao seu dispositivo em um aplicativo de conversa? Como a mensagem "sabe" que é para você? Muitas perguntas surgem, e é isso que tentaremos exemplificar.
@@ -87,8 +89,9 @@ Agora vou começar a dividir por pastas e a medida que ache necessário, vou cri
 2. [ENTENDENDO AS REQUISIÇÕES](https://github.com/well1ngt0nso/serverjs/tree/main/teste_2_server#voltando-um-pouco)
 3. [REQUISIÇÕES A PATIR DE UMA PÁGINA HTML](https://github.com/well1ngt0nso/serverjs/tree/main/teste_3_server#-interagindo-com-p%C3%A1ginas-html-)
 4. [TRATANDO RESPOSTAS_PARTE1](https://github.com/well1ngt0nso/serverjs/tree/main/teste_4_server#tratando-as-respostas-no-html)
-5. [TRATANDO RESPOSTAS_PARTE2]()
-6. 
+5. [TRATANDO RESPOSTAS_PARTE2](https://github.com/well1ngt0nso/serverjs/blob/main/teste_4_server/README.md#tratando-as-respostas-no-html)
+6. [INSERINDO ARQUIVO NO SERVIDOR]()
+7. [TRATANDO RESPOSTAS_PARTE 3]()
 
 ## DICAS🎯
 1. Desconectar o server após atualizações, em alguns casos limpar o cache do navegador ou rodar na guia anônima devido que pode ocorrer de algums configurações anteriores ficarem salvas ou armazenadas, seria um pouco ruim ver o projeto não funcionar quando temos muita certeza que tudo está ok e o problema ser um dos citado haha (aconteu comigo)
