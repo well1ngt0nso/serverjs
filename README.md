@@ -2,7 +2,7 @@
 
 Este repositório destina-se a demonstrar como estabelecer comunicação entre dispositivos em uma rede, seja via Wi-Fi ou Ethernet, utilizando uma API ("servidor") desenvolvida em Node.js (JavaScript). O foco é em uma comunicação local que, após a conclusão deste projeto, poderá ser facilmente portável para a Web. Serão abordados tópicos como: como funciona a comunicação, como visualizar dados, como enviar dados e como acessá-los. O objetivo inicial é explorar a manipulação e visualização desses dados.
 
-[>>> AULAS <<<](https://github.com/well1ngt0nso/serverjs/edit/main/README.md#e-agora)
+[>>> AULAS <<<](https://github.com/well1ngt0nso/serverjs/blob/main/README.md#e-agora)
 
 # BREVE INTRODUÇÃO
 
